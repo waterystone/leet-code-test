@@ -1,9 +1,8 @@
-package com.adu.leet_code.leet_code.problems.algorithms;
+package com.adu.leet_code.problems.algorithms.n0001;
 
 import org.junit.Test;
 
-import com.adu.leet_code.leet_code.BaseTest;
-import com.adu.leet_code.problems.algorithms.N0001;
+import com.adu.leet_code.BaseTest;
 
 /**
  * @author yunjie.du

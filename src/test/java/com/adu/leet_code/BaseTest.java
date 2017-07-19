@@ -1,4 +1,4 @@
-package com.adu.leet_code.leet_code;
+package com.adu.leet_code;
 
 import java.util.Iterator;
 import java.util.Map;
