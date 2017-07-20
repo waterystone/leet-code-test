@@ -1,4 +1,4 @@
-package com.adu.leet_code.problems.algorithms.n0003;
+package com.adu.leet_code.problems.algorithms.n0001;
 
 import java.util.HashMap;
 import java.util.Map;

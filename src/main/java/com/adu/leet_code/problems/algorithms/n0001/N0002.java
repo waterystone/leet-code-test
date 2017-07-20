@@ -1,4 +1,4 @@
-package com.adu.leet_code.problems.algorithms.n0002;
+package com.adu.leet_code.problems.algorithms.n0001;
 
 /**
  * @author yunjie.du

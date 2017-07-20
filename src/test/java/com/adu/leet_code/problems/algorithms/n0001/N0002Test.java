@@ -1,7 +1,8 @@
-package com.adu.leet_code.problems.algorithms.n0002;
+package com.adu.leet_code.problems.algorithms.n0001;
 
 import java.util.List;
 
+import com.adu.leet_code.problems.algorithms.n0001.N0002;
 import org.junit.Before;
 import org.junit.Test;
 

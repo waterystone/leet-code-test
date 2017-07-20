@@ -1,5 +1,6 @@
-package com.adu.leet_code.problems.algorithms.n0003;
+package com.adu.leet_code.problems.algorithms.n0001;
 
+import com.adu.leet_code.problems.algorithms.n0001.N0003;
 import org.junit.Test;
 
 import com.adu.leet_code.BaseTest;
