@@ -1,8 +1,18 @@
 package com.adu.leet_code.problems.algorithms.n0001;
 
 /**
+ * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse
+ * order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+ * <p>
+ * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+ * 
+ * <pre>
+ * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4) Output: 7 -> 0 -> 8
+ * </pre>
+ * 
  * @author yunjie.du
  * @date 2017/7/19 15:25
+ * @see <a href="https://leetcode.com/problems/two-sum/#/description">Two Sum</a>
  */
 public class N0002 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
