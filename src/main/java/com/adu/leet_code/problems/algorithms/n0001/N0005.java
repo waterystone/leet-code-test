@@ -1,73 +1,82 @@
 package com.adu.leet_code.problems.algorithms.n0001;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * @author yunjie.du
  * @date 2017/7/20 11:03
  */
 public class N0005 {
+    /**
+     * 思想：遍历每个元素，求以该元素为中心的回文串长度。<br/>
+     * 
+     * 1）先求相邻同元素的长度，它们肯定是回文的，可以把它们看成一个点；<br/>
+     * 2）再求同元素串向两边扩展的回文长度。
+     *
+     * @param s
+     * @return
+     */
     public String longestPalindrome(String s) {
         if (s == null || s.isEmpty()) {
             return s;
         }
-        String res = String.valueOf(s.charAt(0));
+        int max = 0, maxi = 0, maxj = 0;// 最长回文子串的长度、左下标、右下标。
 
-        Map<Character, List<Integer>> charIndexList = getCharIndexList(s);
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            List<Integer> indexList = charIndexList.get(ch);
-            if (indexList.size() == 1) {
-                continue;
+        for (int i = 0; i < s.length();) {
+            if (s.length() - i < max / 2) {// 剩余长度肯定不够，直接返回
+                break;
             }
 
-            for (int index = indexList.size() - 1; indexList.get(index) > i; index--) {
-                int j = indexList.get(index);
-                if (j - i + 1 <= res.length()) {
-                    break;
-                }
-
-                if (isPalindrome(s, i, j)) {
-                    res = s.substring(i, j + 1);
-                }
-
+            int j = getSameElementMaxIndex(s, i);// 向后找相邻同元素的最大下标。
+            int extentLength = getExtentLength(s, i, j);// 以相邻同元素串为中心，向两边扩展
+            int length = j - i + 1 + extentLength + extentLength;// 该元素的回文长度
+            if (length > max) {
+                max = length;
+                maxi = i - extentLength;
+                maxj = j + extentLength;
             }
 
+            i = j + 1;// 可以跳到下一个不同元素处
         }
 
-        return res.isEmpty() ? null : res;
-    }
-
-    private boolean isPalindrome(String s, int start, int end) {
-        while (start < end) {
-            if (s.charAt(start) != s.charAt(end)) {
-                return false;
-            }
-            start++;
-            end--;
-        }
-        return true;
+        return s.substring(maxi, maxj + 1);
     }
 
     /**
-     * 获取各字符的下标（按顺序）
+     * 获取元素i处向后相邻相同元素的最大下标。 <br/>
+     * 如abbbcb，i=1,则结果为3。
      * 
      * @param s
+     * @param i
      * @return
      */
-    private Map<Character, List<Integer>> getCharIndexList(String s) {
-        Map<Character, List<Integer>> res = new HashMap<>();
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (!res.containsKey(ch)) {
-                res.put(ch, new ArrayList<>());
+    private int getSameElementMaxIndex(String s, int i) {
+        for (int j = i + 1; j < s.length(); j++) {
+            if (s.charAt(j) != s.charAt(i)) {
+                return j - 1;
             }
-            res.get(ch).add(i);
+        }
+
+        return s.length() - 1;
+    }
+
+    /**
+     * 以i、j为左右端点向两边扩展的回文长度。
+     * 
+     * @param s
+     * @param i 左下标
+     * @param j 右下标
+     * @return
+     */
+    private int getExtentLength(String s, int i, int j) {
+        int res = 0;
+        while (--i >= 0 && ++j < s.length()) {
+            if (s.charAt(i) == s.charAt(j)) {
+                res++;
+            } else {
+                return res;
+            }
         }
 
         return res;
     }
+
 }
