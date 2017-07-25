@@ -1,5 +1,7 @@
 package com.adu.leet_code.problems.algorithms.n0001;
 
+import com.adu.leet_code.problems.model.ListNode;
+
 /**
  * Given a linked list, remove the nth node from the end of list and return its head.
  * 
@@ -20,7 +22,7 @@ package com.adu.leet_code.problems.algorithms.n0001;
 public class N0019 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode start = new ListNode(-1);// 标杆结点
-        start.next=head;
+        start.next = head;
 
         ListNode fast = start, slow = start;
         for (int i = 0; i <= n; i++) {// fast向前移n+1次
@@ -82,13 +84,4 @@ public class N0019 {
         return res;
     }
 
-    // Definition for singly-linked list.
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

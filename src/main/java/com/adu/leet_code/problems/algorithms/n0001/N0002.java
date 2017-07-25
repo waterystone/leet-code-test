@@ -1,5 +1,7 @@
 package com.adu.leet_code.problems.algorithms.n0001;
 
+import com.adu.leet_code.problems.model.ListNode;
+
 /**
  * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse
  * order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
@@ -57,12 +59,4 @@ public class N0002 {
         return head.next;
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

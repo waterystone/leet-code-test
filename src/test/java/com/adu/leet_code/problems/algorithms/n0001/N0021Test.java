@@ -10,21 +10,21 @@ import com.adu.leet_code.problems.model.ListNode;
 
 /**
  * @author yunjie.du
- * @date 2017/7/19 15:45
+ * @date 2017/7/25 11:48
  */
-public class N0002Test extends BaseTest {
-    private N0002 n0002 = new N0002();
+public class N0021Test extends BaseTest {
+    private N0021 n0021 = new N0021();
     private ListNode l1, l2;
 
     @Test
-    public void addTwoNumbers() {
-        ListNode res = n0002.addTwoNumbers(l1, l2);
+    public void mergeTwoLists() {
+        ListNode res = n0021.mergeTwoLists(l1, l2);
         printList(res);
     }
 
     @Before
     public void init() {
-        l1 = buildList(Arrays.asList(2, 4, 3, 9));
-        l2 = buildList(Arrays.asList(5, 6, 4));
+        l1 = buildList(Arrays.asList(1, 3, 5, 6));
+        l2 = buildList(Arrays.asList(2, 4, 6));
     }
 }
