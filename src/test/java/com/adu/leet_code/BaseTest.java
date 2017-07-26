@@ -17,6 +17,8 @@ import com.google.common.collect.Lists;
 public class BaseTest {
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
+
+
     protected void print(Iterable<?> iterable) {
         Iterator<?> iterator = iterable.iterator();
         int i = 0;
