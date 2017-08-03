@@ -17,6 +17,6 @@ public class N0046Test extends BaseTest {
     public void permute() {
         int[] nums = { 1, 2, 3, 4 };
         List<List<Integer>> res = n0046.permute(nums);
-        logRes(res);
+        print(res);
     }
 }
