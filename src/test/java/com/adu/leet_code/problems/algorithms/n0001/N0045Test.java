@@ -13,7 +13,7 @@ public class N0045Test extends BaseTest {
 
     @Test
     public void jump() {
-        int[] nums = { 5,9,3,2,1,0,2,3,3,1,0,0 };
+        int[] nums = { 0 };
         int res = n0045.jump(nums);
         logRes(res);
     }
