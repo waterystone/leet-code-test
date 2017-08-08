@@ -49,12 +49,12 @@ public class N0063 {
         initBorder(obstacleGrid, result);// 初始化结果数组的边界
 
         for (int i = 1; i < minLength; i++) {
-            for (int x = i; x < m; x++) {// 第i行
-                result[x][i] = obstacleGrid[x][i] == 1 ? 0 : result[x][i - 1] + result[x - 1][i];
+            for (int y = i; y < m; y++) {// 第i行
+                result[y][i] = obstacleGrid[y][i] == 1 ? 0 : result[y][i - 1] + result[y - 1][i];
             }
 
-            for (int y = i + 1; y < n; y++) {// 第i列
-                result[i][y] = obstacleGrid[i][y] == 1 ? 0 : result[i][y - 1] + result[i - 1][y];
+            for (int x = i + 1; x < n; x++) {// 第i列
+                result[i][x] = obstacleGrid[i][x] == 1 ? 0 : result[i][x - 1] + result[i - 1][x];
             }
         }
 
