@@ -31,7 +31,7 @@ public class N0069 {
             }
         }
 
-        return x >= right * right ? right : left;
+        return right;
     }
 
 }
