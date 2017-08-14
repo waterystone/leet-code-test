@@ -1,5 +1,6 @@
 package com.adu.leet_code;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.adu.leet_code.problems.model.ListNode;
+import com.adu.leet_code.problems.model.TreeNode;
 import com.google.common.collect.Lists;
 
 /**
@@ -16,8 +18,6 @@ import com.google.common.collect.Lists;
  */
 public class BaseTest {
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
-
-
 
     protected void print(Iterable<?> iterable) {
         Iterator<?> iterator = iterable.iterator();
@@ -32,6 +32,33 @@ public class BaseTest {
         for (Map.Entry entry : map.entrySet()) {
             logger.debug("[{}]key={},value={}", ++i, entry.getKey(), entry.getValue());
         }
+    }
+
+    protected void printTree(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        traverse(root, res);
+        logRes(res);
+    }
+
+    protected void printTree(List<TreeNode> list) {
+        int i = 0;
+        for (TreeNode root : list) {
+            List<Integer> res = new ArrayList<>();
+            traverse(root, res);
+            logger.debug("[{}]{}", ++i, res);
+        }
+    }
+
+    protected void traverse(TreeNode root, List<Integer> res) {
+        if (root == null) {
+            res.add(null);
+            return;
+        }
+
+        res.add(root.val);
+        traverse(root.left, res);
+        traverse(root.right, res);
+
     }
 
     protected void printList(ListNode head) {
